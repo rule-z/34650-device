@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Виталий Степанов](https://up.htmlacademy.ru/htmlcss/19/user/34650).
-* Наставник: `Неизвестно`.
+* Наставник: [Андрей Островский](https://htmlacademy.ru/profile/grandmaus).
 
 ---
 
