@@ -30,11 +30,11 @@ a {
   color: #000000;
 }
 
-a:hover {
+a:hover:not(.phone):not(.slide-info a) {
   opacity: 0.6;
 }
 
-a:focus {
+a:focus:not(.phone) {
   opacity: 0.3;
 }
 
@@ -42,6 +42,24 @@ input,
 button {
   border: none;
 }
+
+h1,
+.slide-info h3,
+.service-item-title {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 47px;
+  letter-spacing: .01em;
+}
+
+h3 {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: .01em;
+}
+
+/*.visually-hidden {*/
+  /*display: none;*/
+/*}*/
 
 .main-header {
   background-color: #f7e296;
@@ -54,7 +72,12 @@ button {
 .info-list,
 .category-list,
 .service-navigation,
-.partners-list {
+.brands-list,
+.breadcrumbs,
+.sort-type,
+.sort-direction,
+.filter-list,
+.pagination-list {
   list-style-type: none;
 }
 
@@ -67,60 +90,66 @@ button {
 
 .user-navigation-link,
 .search-form-field,
-.search-form-field + button,
+.search-form-field + .button,
 .catalog-list-link {
   line-height: 36px;
 }
 
-.search-form-field,
-.search-form-field::placeholder,
-.search-form-field + button {
-  padding: 2px 0 0;
-
-  font: inherit;
-  line-height: 36px;
-  letter-spacing: .01em;
-  color: #000000;
-
-  background-color: transparent;
-  border-bottom: 2px solid transparent;
-}
-
 .search-form-field {
+  width: 352px;
+  line-height: 44px;
   padding-left: 40px;
+  color: #000000;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
   opacity: 0.3;
-}
-
-.search-form-field + button {
-  display: none;
-  margin-left: -4px;
-  padding: 0 19px;
-  border: 2px solid transparent;
-}
-
-.search-form-field + button:hover {
-  display: inline;
-  color: #FFFFFF;
-  background-color: #000000;
-}
-
-.search-form-field + button:active {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 .search-form-field:hover {
   opacity: 0.6;
 }
 
-.search-form-field:focus {
-  border-color: transparent transparent #000000 transparent;
-  opacity: 1;
-  outline: 0;
+.search-form-field::placeholder {
+  color: #000000;
 }
 
-.search-form-field:focus + button {
-  display: inline;
+.search-form-field:focus {
   border-color: #000000;
+  opacity: 1;
+}
+
+.search-form-item .button {
+  margin-left: -4px;
+  padding: 5px 17px;
+  color: #000000;
+  background-color: transparent;
+  border: 2px solid #000000;
+  outline: none;
+  visibility: hidden;
+}
+
+.search-form-item .button:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.search-form:hover .search-form-item .button:focus {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form-field:focus + .button {
+  visibility: visible;
+}
+
+.search-form:active .search-form-field {
+  border-bottom: 2px solid #000000;
+  opacity: 1;
+}
+
+.search-form:active .search-form-item .button:active {
+  visibility: visible;
 }
 
 .user-navigation-link {
@@ -135,14 +164,84 @@ button {
   text-transform: uppercase;
 }
 
+.catalog-list {
+  display: none;
+}
 
+.dropdown:hover > .catalog-list {
+  display: block;
+}
 
+/* ================ */
 
+.slide-info > a {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  background-color: #f0c52e;
+}
 
+.info-value {
+  font-family: "Gilroy Light", Arial, sans-serif;
+  font-size: 36px;
+}
 
+.info-text {
+  font-size: 13px;
+  line-height: 20px;
+}
 
+.slide-info > a:active {
+  opacity: 0.3;
+}
 
+.category-item-image {
+  background-color: #f7e296;
+}
 
+.category-item:hover .category-item-image  {
+  background-color: #f0c52e;
+}
+
+.category-item-link:active img,
+.category-item-link:active .category-item-title {
+  opacity: 0.3;
+}
+
+.services {
+  background-color: #e5e5e5;
+}
+
+.service-navigation label {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: .2em;
+  color: #000000;
+  background-color: #f0c52e;
+}
+
+.service-navigation label:active {
+  color: #f7e184;
+  background-color: #000000;
+}
+
+.service-navigation-current label {
+  color: #f7e184;
+  background-color: #000000;
+}
+
+.brands img {
+  filter: grayscale(1);
+  opacity: 0.2;
+}
+
+.brands-item-link:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* ================ */
 
 .main-footer {
   background-color: #464646;
@@ -155,4 +254,28 @@ button {
 
 .main-footer .main-header-logo {
   color: #ffc600
+}
+
+.footer-social {
+  list-style-type: none;
+}
+
+.footer-social .social-link {
+  opacity: 0.3;
+}
+
+.footer-social .social-link:hover {
+ opacity: 1;
+}
+
+.footer-social .social-link:active {
+  opacity: 0.1;
+}
+
+.footer-bottom > a:hover {
+  opacity: 0.6;
+}
+
+.footer-bottom > a:active {
+  opacity: 0.3;
 }
