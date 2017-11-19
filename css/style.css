@@ -14,6 +14,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/opensans.woff2") format("woff2"),
+  url("../fonts/opensans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("../fonts/opensanslight.woff2") format("woff2"),
+  url("../fonts/opensanslight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -45,13 +61,17 @@ button {
 
 h1,
 .slide-info h3,
-.service-item-title {
+.service-item-title,
+.info h2,
+.contacts h2 {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 47px;
   letter-spacing: .01em;
 }
 
-h3 {
+h3,
+.info > a,
+.contacts > a {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 18px;
   letter-spacing: .01em;
@@ -164,6 +184,14 @@ h3 {
   text-transform: uppercase;
 }
 
+.main-navigation-link:hover {
+  opacity: 0.6;
+}
+
+.main-navigation-link:active {
+  opacity: 0.3;
+}
+
 .catalog-list {
   display: none;
 }
@@ -182,12 +210,12 @@ h3 {
   background-color: #f0c52e;
 }
 
-.info-value {
+.info-item .info-value {
   font-family: "Gilroy Light", Arial, sans-serif;
   font-size: 36px;
 }
 
-.info-text {
+.info-item .info-text {
   font-size: 13px;
   line-height: 20px;
 }
@@ -241,6 +269,108 @@ h3 {
   opacity: 1;
 }
 
+.deliveries-link {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+.info > a,
+.contacts > a {
+  color: #000000;
+  background-color: #f0c52e;
+  letter-spacing: .2em;
+}
+
+.info > a:active,
+.contacts > a:active {
+  color: #f7e184;
+  background-color: #000000;
+  opacity: 1;
+}
+
+.breadcrumbs-item {
+  opacity: 0.3;
+}
+
+.breadcrumbs-item:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs-item:active {
+  opacity: 0.1;
+}
+
+.filter-title,
+.sort-title {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.filter-title {
+  background-color: #dbdbdb;
+}
+
+.catalog-sort {
+  background-color: #ebebeb;
+}
+
+.write-us-form label,
+.modal button {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0;
+}
+
+.modal button {
+  letter-spacing: .2em;
+  color: #000000;
+  background-color: #f0c52e;
+}
+
+.modal button:active {
+  color: #f7e184;
+  background-color: #000000;
+}
+
+.modal input,
+.modal textarea {
+  font-family: "Open Sans Light", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #e5e5e5;
+  opacity: 0.5;
+}
+
+.modal input:hover,
+.modal textarea:hover {
+  opacity: 0.8;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  border: 2px solid rgba(240, 197, 46, 0.5);
+  background-color: #FFFFFF;
+  opacity: 1;
+  outline: none;
+}
+
+.modal input:invalid,
+.modal textarea:invalid {
+  background-color: #edb5b5;
+  border: none;
+}
+
+.modal input:invalid:hover,
+.modal input:invalid:focus,
+.modal textarea:invalid:hover,
+.modal textarea:invalid:focus {
+  opacity: 0.5;
+}
 /* ================ */
 
 .main-footer {
