@@ -46,11 +46,11 @@ a {
   color: #000000;
 }
 
-a:hover:not(.phone):not(.slide-info a) {
+a:hover:not(.phone):not(.slide-info a):not(.sort-type-link):not(.filter-current):not(.pagination-link) {
   opacity: 0.6;
 }
 
-a:focus:not(.phone) {
+a:focus:not(.phone):not(.sort-type-link):not(.pagination-link) {
   opacity: 0.3;
 }
 
@@ -184,11 +184,15 @@ h3,
   text-transform: uppercase;
 }
 
-.main-navigation-link:hover {
+.user-navigation-link:hover,
+.main-navigation-link:hover,
+.catalog-list-link:hover {
   opacity: 0.6;
 }
 
-.main-navigation-link:active {
+.user-navigation-link:active,
+.main-navigation-link:active,
+.catalog-list-link:active {
   opacity: 0.3;
 }
 
@@ -276,6 +280,7 @@ h3,
   letter-spacing: 0;
 }
 
+.slide-info > a,
 .info > a,
 .contacts > a {
   color: #000000;
@@ -283,6 +288,7 @@ h3,
   letter-spacing: .2em;
 }
 
+.slide-info > a:active,
 .info > a:active,
 .contacts > a:active {
   color: #f7e184;
@@ -308,15 +314,147 @@ h3,
   font-size: 16px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
-.filter-title {
-  background-color: #dbdbdb;
+.catalog-filter {
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
-.catalog-sort {
-  background-color: #ebebeb;
+.sort-type {
+  background-color: rgba(0, 0, 0, 0.08);
 }
+
+.sort-type-link {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  opacity: 0.3;
+}
+
+.sort-type-link:hover:not(.filter-current) {
+  opacity: 0.6;
+}
+
+.sort-type-link:active:hover,
+.filter-current {
+  opacity: 1;
+}
+
+legend {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: .01em;
+}
+
+.coast-range-count span {
+  font-family: "Gilroy Light", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  opacity: 0.2;
+}
+
+.filter-option label {
+  font-size: 14px;
+  line-height: 40px;
+}
+
+.filter-option:hover {
+  opacity: 0.6;
+}
+
+.filter-input:disabled,
+.filter-input:disabled + label {
+  opacity: 0.25;
+}
+
+.product:hover .product-image {
+  opacity: 0.7;
+}
+
+.product-image {
+  cursor: pointer;
+}
+
+.product-title {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+}
+
+.product-price {
+  font-family: "Gilroy Light", Arial, sans-serif;
+  font-size: 16px;
+}
+
+.product-layout button {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: .2em;
+  color: #000000;
+  background-color: #f0c52e;
+}
+
+.product-layout button:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.product-layout-link {
+  font-size: 13px;
+  line-height: 36px;
+  opacity: 0.5;
+}
+
+.product-layout-link:hover {
+  opacity: 1;
+}
+
+.product-layout-link:active {
+  opacity: 0.2;
+}
+
+.pagination-list {
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: .2em;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.pagination-link {
+  opacity: 0.3;
+}
+
+.pagination-link:hover {
+  opacity: 0.6;
+}
+
+.pagination-link:active,
+.pagination-link:focus {
+  opacity: 1;
+}
+
+.pagination-item-current > .pagination-link,
+.pagination-item-current > .pagination-link:hover,
+.pagination-item-current > .pagination-link:active {
+  opacity: 1;
+}
+
+.previous > .pagination-link,
+.forward > .pagination-link {
+  opacity: 1;
+}
+
+.previous:hover,
+.forward:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.previous > .pagination-link:active,
+.forward > .pagination-link:active {
+  opacity: 0.3;
+}
+
 
 .write-us-form label,
 .modal button {
