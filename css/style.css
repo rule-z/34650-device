@@ -50,7 +50,7 @@ a:hover:not(.phone):not(.slide-info a):not(.sort-type-link):not(.filter-current)
   opacity: 0.6;
 }
 
-a:focus:not(.phone):not(.sort-type-link):not(.pagination-link) {
+a:focus:not(.phone):not(.sort-type-link):not(.pagination-link):not(.slide-info a) {
   opacity: 0.3;
 }
 
@@ -225,7 +225,7 @@ h3,
 }
 
 .slide-info > a:active {
-  opacity: 0.3;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .category-item-image {
@@ -288,7 +288,6 @@ h3,
   letter-spacing: .2em;
 }
 
-.slide-info > a:active,
 .info > a:active,
 .contacts > a:active {
   color: #f7e184;
