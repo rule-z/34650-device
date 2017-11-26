@@ -7,53 +7,61 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<header class="main-header">
+<header class="main-header centerer">
   <div class="wrapper">
     <a class="main-header-logo" href="/">
       <img src="img/logo.png" width="164" height="36" alt="Логотип сайта Device">
     </a>
-    <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-      <p class="search-form-item">
-        <label class="visually-hidden" for="search-field">Поиск</label>
-        <input class="search-form-field" id="search-field" type="search" name="search" placeholder="Поиск по сайту">
-        <button class="button" type="submit">Искать</button>
-      </p>
-    </form>
-    <ul class="user-navigation-list">
-      <li class="user-navigation-item">
-        <a class="user-navigation-link signin" href="profile.html">Валентин Петухов</a>
-        <a class="user-navigation-link exit" href="logout.html">Выйти</a>
-      </li>
-      <li class="user-navigation-item">
-        <a class="user-navigation-link compare" href="compare.html">Сравнить</a>
-      </li>
-      <li class="user-navigation-item">
-        <a class="user-navigation-link cart" href="cart.html">Корзина</a>
-      </li>
-    </ul>
+    <div class="row-container">
+      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+        <p class="search-form-item">
+          <label class="visually-hidden" for="search-field">Поиск</label>
+          <input class="search-form-field" id="search-field" type="search" name="search" placeholder="Поиск по сайту">
+          <button class="button" type="submit">Искать</button>
+        </p>
+      </form>
+      <ul class="user-navigation-list">
+        <li class="user-navigation-item signin">
+          <a class="user-navigation-link" href="profile.html">Валентин Петухов</a>
+          <a class="user-navigation-link exit" href="logout.html">Выйти</a>
+        </li>
+        <li class="user-navigation-item compare">
+          <a class="user-navigation-link" href="compare.html">Сравнить</a>
+        </li>
+        <li class="user-navigation-item cart">
+          <a class="user-navigation-link" href="cart.html">Корзина</a>
+        </li>
+      </ul>
+    </div>
     <nav class="main-navigation">
       <ul class="main-navigation-list">
         <li class="main-navigation-item dropdown">
           <a class="main-navigation-link" href="catalog.html">Каталог товаров</a>
           <ul class="catalog-list">
-            <li class="catalog-list-item">
-              <a class="catalog-list-link" href="vr.html">Виртуальная реальность</a>
-            </li>
-            <li class="catalog-list-item">
-              <a class="catalog-list-link" href="monopods.html">Моноподы для селфи</a>
-            </li>
-            <li class="catalog-list-item">
-              <a class="catalog-list-link" href="actioncams.html">Экшн-камеры</a>
-            </li>
-            <li class="catalog-list-item">
-              <a class="catalog-list-link" href="bracelets.html">Фитнес-браслеты</a>
-            </li>
-            <li class="catalog-list-item">
-              <a class="catalog-list-link" href="smartwatches.html">Умные часы</a>
-            </li>
-            <li class="catalog-list-item">
-              <a class="catalog-list-link" href="quadrocopters.html">Квадрокоптеры</a>
-            </li>
+            <div class="column">
+              <li class="catalog-list-item">
+                <a class="catalog-list-link" href="vr.html">Виртуальная реальность</a>
+              </li>
+              <li class="catalog-list-item">
+                <a class="catalog-list-link" href="monopods.html">Моноподы для селфи</a>
+              </li>
+              <li class="catalog-list-item">
+                <a class="catalog-list-link" href="actioncams.html">Экшн-камеры</a>
+              </li>
+            </div>
+            <div class="column">
+              <li class="catalog-list-item">
+                <a class="catalog-list-link" href="bracelets.html">Фитнес-браслеты</a>
+              </li>
+              <li class="catalog-list-item">
+                <a class="catalog-list-link" href="smartwatches.html">Умные часы</a>
+              </li>
+            </div>
+            <div class="column">
+              <li class="catalog-list-item">
+                <a class="catalog-list-link" href="quadrocopters.html">Квадрокоптеры</a>
+              </li>
+            </div>
           </ul>
         </li>
         <li class="main-navigation-item">

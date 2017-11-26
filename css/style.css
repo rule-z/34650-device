@@ -60,48 +60,29 @@ body {
 
 .main-header {
   position: relative;
-  width: 1160px;
-  min-height: 299px;
+  height: 299px;
   margin-top: 40px;
   padding: 34px 60px 0;
-  /*background-color: #f7e296;*/
-  background-color: rgba(255, 165, 0, 0.5);
+
+  background-color: #f7e296;
   box-sizing: border-box;
+  /*opacity: 0.5;*/
+  /*z-index: 2;*/
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  min-height: 265px;
-  background-color: rgba(30, 144, 255, 0.5);
-}
-
-.row-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  /*background-color: rgba(0, 0, 255, 0.5);*/
 }
 
 .main-header-logo {
   position: absolute;
-  top: -27px;
+  top: -18px;
   left: 59px;
   display: block;
   width: 164px;
   height: 36px;
-  /*background-color: rgba(255, 0, 0, 0.5);*/
-
-
-  font-family: "Gilroy", Arial, sans-serif;
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  color: #000000;
-  text-decoration: none;
-  text-transform: uppercase;
   outline: none;
 }
 
@@ -113,41 +94,38 @@ body {
   opacity: 0.3;
 }
 
+.row-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
 .search-form {
   width: 440px;
-  min-height: 50px;
-  /*background-color: rgba(255, 0, 0, 0.5);*/
 }
 
 .search-form-item {
-  height: 50px;
   margin: 0;
 }
 
 .search-form-field {
-  height: 50px;
+  height: 47px;
   width: 354px;
+  padding-left: 39px;
+  border: none;
+  border-bottom: 2px solid transparent;
+
   font-size: 15px;
   font-weight: 300;
   line-height: 36px;
   letter-spacing: 0.01em;
   color: #000000;
 
-  padding-left: 40px;
   background-color: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
+
   outline: none;
   opacity: 0.3;
-}
-
-.search-form:active .search-form-field {
-  border-bottom-color: #000000;
-  opacity: 1;
-}
-
-.search-form:active .search-form-item .button:active {
-  visibility: visible;
 }
 
 .search-form-field::placeholder {
@@ -165,10 +143,6 @@ body {
 .search-form-field:focus {
   border-bottom-color: #000000;
   opacity: 1;
-}
-
-.search-form-field:focus + .button {
-  visibility: visible;
 }
 
 .search-form-item .button {
@@ -193,8 +167,21 @@ body {
   background-color: #000000;
 }
 
+.search-form-field:focus + .button {
+  visibility: visible;
+}
+
 .search-form:hover .search-form-item .button:active {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form:active .search-form-field {
+  border-bottom-color: #000000;
+  opacity: 1;
+}
+
+.search-form:active .search-form-item .button:active {
+  visibility: visible;
 }
 
 .user-navigation-list {
@@ -205,7 +192,7 @@ body {
   min-height: 50px;
   margin: 0;
   padding: 0;
-  /*background-color: rgba(255, 0, 0, 0.5);*/
+
   list-style-type: none;
 }
 
@@ -234,6 +221,11 @@ body {
   padding-left: 27px;
 }
 
+.user-navigation-item .exit {
+  padding-left: 0;
+  margin-left: 15px;
+}
+
 .compare {
   margin-right: 40px;
 }
@@ -249,20 +241,25 @@ body {
 .main-navigation {
   position: relative;
   width: 1040px;
-  min-height: 50px;
-  margin-bottom: 10px;
-  background-color: rgba(255, 0, 0, 0.5);
 }
 
 .main-navigation-list {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50px;
   margin: 0;
   padding: 0;
-
+  padding-top: 15px; /* Часть костыля для работы dropdown-menu, хотя я говорил можно было бы обойтись line-height 50 */
   list-style-type: none;
+}
+
+.main-navigation-item:last-child {
+  margin-right: -3px;
+  margin-left: 108px;
+}
+
+.dropdown + .main-navigation-item {
+  margin-right: 34px;
 }
 
 .dropdown {
@@ -273,40 +270,12 @@ body {
   padding-right: 30px;
 }
 
-.dropdown + .main-navigation-item {
-  margin-right: 34px;
+.dropdown:hover .catalog-list {
+  display: flex;
+  margin-top: -13px; /* У main-navigation-link по шаблону нет line-height 50px (могло бы решить проблему) */
+  padding-top: 13px; /* поэтому костыль, чтобы dropdown-menu нормально появлялось и работало */
+  z-index: 3;
 }
-
-.main-navigation-item:last-child {
-  margin-right: -3px;
-  margin-left: 108px;
-}
-
-.catalog-list {
-  position: absolute;
-  top: 50px;
-  width: 1040px;
-  min-height: 108px;
-  margin-top: 10px;
-  background-color: rgba(154, 205, 50, 0.5);
-}
-
-/* ----- Сделал до сюда ----- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .main-navigation-link {
   font-family: "Gilroy", Arial, sans-serif;
@@ -314,6 +283,9 @@ body {
   font-weight: 800;
   letter-spacing: 0.2em;
   color: #000000;
+
+  /*line-height: 50px; !* То самое решение, которое нельзя применить *!*/
+
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -326,16 +298,19 @@ body {
   opacity: 0.3;
 }
 
-.dropdown:hover .catalog-list {
-  display: block;
-}
-
 .catalog-list {
+  position: absolute;
   display: none;
-  /*margin: 0;*/
-  padding: 0;
+  flex-direction: row;
+  top: 48px;
+  left: -60px;
+  width: 1040px;
+  min-height: 152px;
+  padding: 0 60px;
+  background-color: #f7e296;
 
   list-style-type: none;
+  z-index: 3;
 }
 
 .catalog-list-link {
@@ -355,17 +330,84 @@ body {
   opacity: 0.3;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 10px;
+  opacity: 0.5;
+}
+
+.column:first-child {
+  margin-right: 58px;
+}
+
+.column:last-child {
+  margin-left: 76px;
+}
+
 /* Styles for Main block */
 
+main.container {
+  position: relative;
+  z-index: 1;
+}
+
+.slider {
+  position: relative;
+  height: 486px;
+}
+
 .slider-control {
+  position: absolute;
+  right: 82px;
+  bottom: 245px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80px;
+  height: 12px;
+
   list-style-type: none;
+  z-index: 2;
+}
+
+.slide {
+  position: relative;
+  top: -111px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 497px;
+}
+
+
+.slide-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 580px;
+  min-height: 497px;
+}
+
+.slide-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 560px;
+  min-height: 497px;
 }
 
 .slide-title {
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 47px;
+  line-height: 55px; /* Временно */
   font-weight: 800;
   letter-spacing: 0.01em;
+
+  margin: 0;
+  margin-bottom: 20px; /* Временно */
 }
 
 .slide-description {
@@ -374,6 +416,45 @@ body {
   line-height: 30px;
   letter-spacing: 0.01em;
   color: #464646;
+
+  margin: 0;
+  margin-bottom: 44px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 91px;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.info-item:not(:last-child) {
+  margin-right: 77px;
+}
+
+.info-value {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  color: #000000;
+
+  margin: 0;
+  margin-bottom: 11px;
+}
+
+.slide-info-text {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #464646;
+
+  margin: 0;
 }
 
 .slide-link {
@@ -384,34 +465,30 @@ body {
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
+
+  display: block;
+  padding: 10px 43px;
+  margin-bottom: 52px;
 }
 
 .slide-link:active {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.info-list {
-  list-style-type: none;
-}
-
-.info-value {
-  font-family: "Gilroy", Arial, sans-serif;
-  font-size: 36px;
-  font-weight: 300;
-  letter-spacing: 0.01em;
-  color: #000000;
-}
-
-.info-text {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 20px;
-  letter-spacing: 0.01em;
-  color: #464646;
-}
-
 .category-list {
+  position: relative;
+  top: -5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
   list-style-type: none;
+}
+
+.category-item {
+  width: 160px;
 }
 
 .category-item-link {
@@ -420,6 +497,10 @@ body {
 }
 
 .category-item-image {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 35px;
+
   background-color: rgba(240, 197, 46, 0.5);
 }
 
@@ -428,7 +509,22 @@ body {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.01em;
+
+  word-wrap: break-word;
 }
+/* ----- Сделал до сюда ----- */
+
+
+
+
+
+
+
+
+
+
+
+
 
 .category-item:hover .category-item-image  {
   background-color: rgba(240, 197, 46, 1);
