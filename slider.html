@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  @font-face {
+    font-family: "Gilroy";
+    font-weight: 800;
+    font-style: normal;
+    src: local("Gilroy Extrabold"),
+    url("fonts/gilroyextrabold.woff2") format("woff2"),
+    url("fonts/gilroyextrabold.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Gilroy";
+    font-weight: 300;
+    font-style: normal;
+    src: local("Gilroy Light"),
+    url("fonts/gilroylight.woff2") format("woff2"),
+    url("fonts/gilroylight.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-style: normal;
+    src: local("Open Sans Regular"),
+    url("fonts/opensans.woff2") format("woff2"),
+    url("fonts/opensans.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-style: normal;
+    src: local("Open Sans Light"),
+    url("fonts/opensanslight.woff2") format("woff2"),
+    url("fonts/opensanslight.woff") format("woff");
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-width: 1160px;
+
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    color: #464646;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .slider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 50%;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .slider-controls {
+    width: 284px;
+    height: 240px;
+    padding-top: 80px;
+    border-right: 7px solid #000000;
+    z-index: 100;
+
+    text-align: center;
+    font-size: 0;
+
+    background-color: yellowgreen;
+  }
+
+  .slider-controls .active:before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+
+    width: 4px;
+    height: 4px;
+    margin: -3px;
+
+    background-color: inherit;
+    border: 1px solid #000000;
+    border-radius: 50%;
+  }
+
+  .slider-controls label {
+    position: relative;
+
+    display: block;
+    width: 160px;
+    height: 40px;
+    margin-bottom: 24px;
+    /*padding: 4px;*/
+    /*border: 1px solid #000000;*/
+    /*border-radius: 50%;*/
+    cursor: pointer;
+
+    /*background-color: #ffffff;*/
+    /*background-color: red;*/
+  }
+
+  .slider-controls label::after {
+    content: "";
+
+    position: absolute;
+    /*top: 2px;*/
+    left: 0px;
+    width: 160px;
+    height: 8px;
+    /*border: 1px solid #000000;*/
+    /*border-radius: 50%;*/
+
+    background-color: #f0c52e;
+    z-index: 1;
+  }
+
+  .slider-list {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  .slider-item {
+    display: none;
+    width: 760px;
+    height: 248px;
+    padding-left: 116px;
+    padding-top: 72px;
+    background-color: dodgerblue;
+  }
+
+  #product-1:checked ~ .slider-list .slider-item:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #product-2:checked ~ .slider-list .slider-item:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #product-3:checked ~ .slider-list .slider-item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #product-1:checked ~ .slider-controls .slider-controls-item--1::before,
+  #product-2:checked ~ .slider-controls .slider-controls-item--2::before,
+  #product-3:checked ~ .slider-controls .slider-controls-item--3::before {
+    content: 'value';
+    position: absolute;
+    left: 0;
+    /*top: 50%;*/
+    z-index: 2;
+    width: 277px;
+    height: 40px;
+    /*margin: -3px;*/
+    background-color: #000000;
+    /*border: 1px solid #000000;*/
+    /*border-radius: 50%;*/
+    color: #ffffff;
+  }
+
+ .slider-item-title {
+    max-width: 500px;
+    margin: 0;
+    margin-bottom: 25px;
+
+    font-family: "Gilroy", Arial, sans-serif;
+    font-size: 47px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+
+ .slider-item-description {
+    margin: 0;
+    margin-bottom: 49px;
+  }
+
+
+</style>
+<body>
+<!-- Тест слайд контролов -->
+<h1 class="visually-hidden">Device</h1>
+<section class="slider">
+  <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
+  <input class="visually-hidden" type="radio" id="product-2" name="toggle">
+  <input class="visually-hidden" type="radio" id="product-3" name="toggle">
+  <h2 class="visually-hidden">Слайды</h2>
+  <div class="slider-controls">
+    <label class="slider-controls-item slider-controls-item--1" for="product-1">Первый</label>
+    <label class="slider-controls-item slider-controls-item--2" for="product-2">Второй</label>
+    <label class="slider-controls-item slider-controls-item--3" for="product-3">Третий</label>
+  </div>
+  <ul class="slider-list">
+    <li class="slider-item">
+      <h3 class="slider-item-title">Доставка</h3>
+      <p class="slider-item-description">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
+    </li>
+    <li class="slider-item">
+      <h3 class="slider-item-title">Гарантия</h3>
+      <p class="slider-item-description">Если из-за возгорания купленного у нас товара у вас сгорит<br> дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
+    </li>
+    <li class="slider-item">
+      <h3 class="slider-item-title">Кредит</h3>
+      <p class="slider-item-description">Залезть в долговую яму стало проще! Кредитные<br> консультанты подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
+    </li>
+  </ul>
+</section>
+<!-- Тест слайд контролов -->
+</body>
+</html>
