@@ -41,202 +41,472 @@
     url("fonts/opensanslight.woff") format("woff");
   }
 
+  html,
   body {
+    height: 1466px;
     margin: 0;
     padding: 0;
-    min-width: 1160px;
-
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 15px;
-    line-height: 30px;
-    font-weight: 300;
-    letter-spacing: 0.01em;
-    color: #464646;
   }
 
-  a {
-    text-decoration: none;
-  }
-
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    clip: rect(0, 0, 0, 0);
-  }
-
-  .slider {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+  .centerer {
     width: 1160px;
     margin: 0 auto;
-    padding: 0;
-    padding-top: 50%;
-    background-color: #ffffff;
+  }
+
+  .catalog-nav-info {
+    height: 179px;
+    padding: 0 60px;
     box-sizing: border-box;
+
+    background-color: dodgerblue;
   }
 
-  .slider-controls {
-    width: 284px;
-    height: 240px;
-    padding-top: 80px;
-    border-right: 7px solid #000000;
-    z-index: 100;
-
-    text-align: center;
-    font-size: 0;
-
-    background-color: yellowgreen;
+  .catalog-title {
+    font-family: "Gilroy", Arial, sans-serif;
+    font-size: 47px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin: 0;
   }
 
-  .slider-controls .active:before {
-    content: "";
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 2;
-
-    width: 4px;
-    height: 4px;
-    margin: -3px;
-
-    background-color: inherit;
-    border: 1px solid #000000;
-    border-radius: 50%;
-  }
-
-  .slider-controls label {
-    position: relative;
-
-    display: block;
-    width: 160px;
-    height: 40px;
-    margin-bottom: 24px;
-    /*padding: 4px;*/
-    /*border: 1px solid #000000;*/
-    /*border-radius: 50%;*/
-    cursor: pointer;
-
-    /*background-color: #ffffff;*/
-    /*background-color: red;*/
-  }
-
-  .slider-controls label::after {
-    content: "";
-
-    position: absolute;
-    /*top: 2px;*/
-    left: 0px;
-    width: 160px;
-    height: 8px;
-    /*border: 1px solid #000000;*/
-    /*border-radius: 50%;*/
-
-    background-color: #f0c52e;
-    z-index: 1;
-  }
-
-  .slider-list {
+  .breadcrumbs {
     margin: 0;
     padding: 0;
 
     list-style-type: none;
   }
 
-  .slider-item {
-    display: none;
-    width: 760px;
-    height: 248px;
-    padding-left: 116px;
-    padding-top: 72px;
+  .breadcrumbs-item {
+    display: inline-block;
+  }
+
+  .breadcrumbs-link {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.3);
+
+    text-decoration: none;
+  }
+
+  .breadcrumbs-link:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .breadcrumbs-link:active {
+    color: rgba(0, 0, 0, 0.1);
+  }
+
+  .catalog-header {
+    width: 100%;
+    height: 70px;
+
+    background: linear-gradient(to right, #dbdbdb 0%, #dbdbdb 50%, #ebebeb 50%, #ebebeb 100%)
+  }
+
+  .catalog-main {
+    width: 100%;
+    height: 1217px;
+
+    background: linear-gradient(to right, #eeeeee 0%, #eeeeee 50%, #ffffff 50%, #ffffff 100%)
+  }
+
+  .catalog-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .catalog-left {
+    width: 328px;
+  }
+
+  .catalog-right {
+    width: 832px;
+  }
+
+  .catalog-header .catalog-left {
+    height: 70px;
+
+    background-color: #dbdbdb;
+  }
+
+  .catalog-header .catalog-right {
+    height: 70px;
+
+    background-color: #ebebeb;
+  }
+
+  .filter-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 70px;
+    padding-left: 54px;
+  }
+
+  .filter-header-title {
+    margin: 0;
+
+    font-family: "Gilroy", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  .sorting {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 70px;
+    padding-left: 73px;
+  }
+
+  .sorting-title {
+    margin: 0;
+
+    font-family: "Gilroy", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  .sorting-type {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  .sorting-type-item {
+    display: inline-block;
+  }
+
+  .sorting-type-link {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+  }
+
+  .sorting-type-link:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .sorting-type-link:active {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .sorting-direction {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  .sorting-direction-item {
+    display: inline-block;
+  }
+
+  .catalog-main .catalog-left {
+    height: 1217px;
+
+    background-color: #eeeeee;
+  }
+
+  .filter-main {
+    min-height: 700px;
+    padding-left: 54px;
+  }
+
+  .filter-form {
+    width: 211px;
+    height: 630px;
+  }
+
+  fieldset {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+
     background-color: dodgerblue;
   }
 
-  #product-1:checked ~ .slider-list .slider-item:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  #product-2:checked ~ .slider-list .slider-item:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  #product-3:checked ~ .slider-list .slider-item:nth-child(3) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  #product-1:checked ~ .slider-controls .slider-controls-item--1::before,
-  #product-2:checked ~ .slider-controls .slider-controls-item--2::before,
-  #product-3:checked ~ .slider-controls .slider-controls-item--3::before {
-    content: 'value';
+  fieldset::before {
+    content: "";
     position: absolute;
-    left: 0;
-    /*top: 50%;*/
-    z-index: 2;
-    width: 277px;
-    height: 40px;
-    /*margin: -3px;*/
+    top: 0;
+    left: 5px;
+
+    width: 201px;
+    height: 2px;
+
     background-color: #000000;
-    /*border: 1px solid #000000;*/
-    /*border-radius: 50%;*/
-    color: #ffffff;
   }
 
- .slider-item-title {
-    max-width: 500px;
+  .fieldset-title {
     margin: 0;
-    margin-bottom: 25px;
+    padding: 0 5px;
 
     font-family: "Gilroy", Arial, sans-serif;
-    font-size: 47px;
+    font-size: 18px;
     font-weight: 800;
-    line-height: normal;
     letter-spacing: 0.01em;
     color: #000000;
   }
 
- .slider-item-description {
-    margin: 0;
-    margin-bottom: 49px;
+  .coast-range {
+    width: 211px;
+    height: 22px;
+    padding: 10px 5px 10px 10px;
+    box-sizing: border-box;
+
+    background-color: red;
   }
 
+  .coast-scale {
+    width: 196px;
+    height: 2px;
 
+    background-color: #dbdbdb;
+  }
+
+  .coast-scale-set {
+    width: 110px;
+    height: 2px;
+
+    background-color: #91c92f;
+  }
+
+  .coast-range-toggle {
+    position: relative;
+
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    background-color: #ffffff;
+    /*z-index: 3;*/
+    box-shadow: 0px 2px 2px #dadada;
+  }
+
+  .coast-range-toggle::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+
+    background-color: #b1b1b1;
+    /*z-index: 3;*/
+  }
+
+  .toggle-min {
+    top: -12px;
+    left: -10px;
+  }
+
+  .toggle-max {
+    top: -12px;
+    left: 76px;
+  }
+
+  .coast-range-count {
+    width: 211px;
+    height: 22px;
+    box-sizing: border-box;
+
+    background-color: red;
+  }
+
+  .coast-range-count span {
+    font-family: "Gilroy", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22.27px;
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  .color-list {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  .color-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .input-checkbox {
+    margin: 0;
+  }
+
+  .color-item label {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+
+  .catalog-main .catalog-right {
+    height: 1217px;
+
+    background-color: #ffffff;
+  }
 </style>
 <body>
-<!-- Тест слайд контролов -->
-<h1 class="visually-hidden">Device</h1>
-<section class="slider">
-  <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
-  <input class="visually-hidden" type="radio" id="product-2" name="toggle">
-  <input class="visually-hidden" type="radio" id="product-3" name="toggle">
-  <h2 class="visually-hidden">Слайды</h2>
-  <div class="slider-controls">
-    <label class="slider-controls-item slider-controls-item--1" for="product-1">Первый</label>
-    <label class="slider-controls-item slider-controls-item--2" for="product-2">Второй</label>
-    <label class="slider-controls-item slider-controls-item--3" for="product-3">Третий</label>
-  </div>
-  <ul class="slider-list">
-    <li class="slider-item">
-      <h3 class="slider-item-title">Доставка</h3>
-      <p class="slider-item-description">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
-    </li>
-    <li class="slider-item">
-      <h3 class="slider-item-title">Гарантия</h3>
-      <p class="slider-item-description">Если из-за возгорания купленного у нас товара у вас сгорит<br> дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
-    </li>
-    <li class="slider-item">
-      <h3 class="slider-item-title">Кредит</h3>
-      <p class="slider-item-description">Залезть в долговую яму стало проще! Кредитные<br> консультанты подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
-    </li>
-  </ul>
-</section>
-<!-- Тест слайд контролов -->
+<!-- Тест мейна контролов -->
+<main class="main-container">
+  <section class="catalog-nav-info centerer">
+    <h1 class="catalog-title">Моноподы для селфи</h1>
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs-item">
+        <a class="breadcrumbs-link" href="index.html">Главная</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <a class="breadcrumbs-link" href="catalog.html">Каталог товаров</a>
+      </li>
+      <li class="breadcrumbs-item breadcrumbs-item-current">
+        <a class="breadcrumbs-link">Моноподы для селфи</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="catalog-header">
+    <div class="catalog-wrapper centerer">
+      <div class="catalog-left">
+        <div class="filter-header">
+          <h2 class="filter-header-title">Фильтр:</h2>
+        </div>
+      </div>
+
+      <div class="catalog-right">
+        <div class="sorting">
+          <h2 class="sorting-title">Сортировка:</h2>
+
+          <ul class="sorting-type">
+            <li class="sorting-type-item">
+              <a class="sorting-type-link catalog-header-current" href="#">По цене</a>
+            </li>
+            <li class="sorting-type-item">
+              <a class="sorting-type-link" href="#">По типу</a>
+            </li>
+            <li class="sorting-type-item">
+              <a class="sorting-type-link" href="#">По популярности</a>
+            </li>
+          </ul>
+
+          <ul class="sorting-direction">
+            <li class="sorting-direction-item">
+              <a class="sorting-direction-link triangle-up catalog-header-current">По убыванию</a> <!-- Текст временно пока нет иконок -->
+            </li>
+            <li class="sorting-direction-item">
+              <a class="sorting-direction-link triangle-down">По возрастанию</a> <!-- Текст временно пока нет иконок -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-main">
+    <div class="catalog-wrapper centerer">
+      <div class="catalog-left">
+        <div class="filter-main">
+          <form class="filter-form" action="https://echo.htmlacademy.ru" method="post">
+            <fieldset>
+              <h2 class="fieldset-title">Стоимость</h2>
+              <div class="coast-range">
+                <div class="coast-scale">
+                  <div class="coast-scale-set"></div>
+                </div>
+                <div class="coast-range-toggle toggle-min"></div>
+                <div class="coast-range-toggle toggle-max"></div>
+              </div>
+
+              <div class="coast-range-count">
+                <span>от 0</span>
+                <span>до 5000</span>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <h2 class="fieldset-title">Цвет</h2>
+              <ul class="color-list">
+                <li class="color-item">
+                  <input class="visually-hidden input-checkbox" type="checkbox" name="black-color" id="color-item-black" checked>
+                  <label for="color-item-black">Черный</label>
+                </li>
+
+                <li class="color-item">
+                  <input class="visually-hidden input-checkbox" type="checkbox" name="white-color" id="color-item-white">
+                  <label for="color-item-white">Белый</label>
+                </li>
+
+                <li class="color-item">
+                  <input class="visually-hidden input-checkbox" type="checkbox" name="blue-color" id="color-item-blue" checked>
+                  <label for="color-item-blue">Синий</label>
+                </li>
+
+                <li class="color-item">
+                  <input class="visually-hidden input-checkbox" type="checkbox" name="red-color" id="color-item-red" checked>
+                  <label for="color-item-red">Красный</label>
+                </li>
+
+                <li class="color-item">
+                  <input class="visually-hidden input-checkbox" type="checkbox" name="pink-color" id="color-item-pink">
+                  <label for="color-item-pink">Розовый</label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <fieldset>
+              <h2 class="fieldset-title">Bluetooth</h2>
+              <ul class="filter-list">
+                <li class="filter-option">
+                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="bluetooth-avialability" value="yes" id="filter-bluetooth-yes">
+                  <label for="filter-bluetooth-yes">Есть</label>
+                </li>
+                <li class="filter-option">
+                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="bluetooth-avialability" value="no" id="filter-bluetooth-no" checked>
+                  <label for="filter-bluetooth-no">Нет</label>
+                </li>
+              </ul>
+            </fieldset>
+            <button class="button" type="submit">Показать</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="catalog-right">
+
+      </div>
+    </div>
+  </section>
+</main>
+<!-- Тест мейна контролов -->
 </body>
 </html>
