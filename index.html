@@ -213,32 +213,34 @@
       </ul>
     </section>
     <section class="services">
-      <h2 class="visually-hidden">Сервисы</h2>
-      <section class="service-slider centerer">
-        <input class="visually-hidden" type="radio" id="service-1" name="service-toggle" checked>
-        <input class="visually-hidden" type="radio" id="service-2" name="service-toggle">
-        <input class="visually-hidden" type="radio" id="service-3" name="service-toggle">
+      <div class="wrapper centerer">
         <h2 class="visually-hidden">Сервисы</h2>
-        <div class="service-slider-controls">
-          <label class="service-slider-controls-item service-slider-controls-item--1" for="service-1">Доставка</label>
-          <label class="service-slider-controls-item service-slider-controls-item--2" for="service-2">Гарантия</label>
-          <label class="service-slider-controls-item service-slider-controls-item--3" for="service-3">Кредит</label>
-        </div>
-        <ul class="service-slider-list">
-          <li class="service-slider-item">
-            <h3 class="service-slider-item-title">Доставка</h3>
-            <p class="service-slider-item-description">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
-          </li>
-          <li class="service-slider-item">
-            <h3 class="service-slider-item-title">Гарантия</h3>
-            <p class="service-slider-item-description">Если из-за возгорания купленного у нас товара у вас сгорит<br> дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
-          </li>
-          <li class="service-slider-item">
-            <h3 class="service-slider-item-title">Кредит</h3>
-            <p class="service-slider-item-description">Залезть в долговую яму стало проще! Кредитные<br> консультанты подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
-          </li>
-        </ul>
-      </section>
+        <section class="service-slider centerer">
+          <input class="visually-hidden" type="radio" id="service-1" name="service-toggle" checked>
+          <input class="visually-hidden" type="radio" id="service-2" name="service-toggle">
+          <input class="visually-hidden" type="radio" id="service-3" name="service-toggle">
+          <h2 class="visually-hidden">Сервисы</h2>
+          <div class="service-slider-controls">
+            <label class="service-slider-controls-item service-slider-controls-item--1" for="service-1">Доставка</label>
+            <label class="service-slider-controls-item service-slider-controls-item--2" for="service-2">Гарантия</label>
+            <label class="service-slider-controls-item service-slider-controls-item--3" for="service-3">Кредит</label>
+          </div>
+          <ul class="service-slider-list">
+            <li class="service-slider-item">
+              <h3 class="service-slider-item-title">Доставка</h3>
+              <p class="service-slider-item-description">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
+            </li>
+            <li class="service-slider-item">
+              <h3 class="service-slider-item-title">Гарантия</h3>
+              <p class="service-slider-item-description">Если из-за возгорания купленного у нас товара у вас сгорит<br> дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
+            </li>
+            <li class="service-slider-item">
+              <h3 class="service-slider-item-title">Кредит</h3>
+              <p class="service-slider-item-description">Залезть в долговую яму стало проще! Кредитные<br> консультанты подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
+            </li>
+          </ul>
+        </section>
+      </div>
     </section>
 
     <section class="brands centerer">
@@ -300,22 +302,13 @@
 
   <footer class="main-footer">
     <div class="wrapper">
-      <div class="footer-top">
-        <a class="main-header-logo" href="index.html">DEVICE</a>
-        <ul class="user-navigation-list">
-          <li class="user-navigation-item">
-            <a class="user-navigation-link signin" href="login.html">Войти</a>
-          </li>
-          <li class="user-navigation-item">
-            <a class="user-navigation-link compare" href="compare.html">Сравнить</a>
-          </li>
-          <li class="user-navigation-item">
-            <a class="user-navigation-link cart" href="cart.html">Корзина</a>
-          </li>
-        </ul>
+      <div class="footer-left">
+        <a class="main-footer-logo" href="/">
+          <img src="img/logo-footer.png" width="164" height="36" alt="Логотип сайта Device">
+        </a>
+        <p class="address">г. Москва, ул. Строителей, 15</p>
       </div>
       <div class="footer-middle">
-        <p class="address">г. Москва, ул. Строителей, 15</p>
         <nav class="main-navigation">
           <ul class="main-navigation-list">
             <li class="main-navigation-item">
@@ -329,9 +322,6 @@
             </li>
           </ul>
         </nav>
-        <a class="phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
-      </div>
-      <div class="footer-bottom">
         <ul class="footer-social">
           <li class="footer-social-item">
             <a class="social-link facebook" href="https://ru-ru.facebook.com"><!-- Facebook --></a>
@@ -343,6 +333,20 @@
             <a class="social-link twitter" href="https://twitter.com"><!-- Twitter --></a>
           </li>
         </ul>
+      </div>
+      <div class="footer-right">
+        <ul class="user-navigation-list">
+          <li class="user-navigation-item signin">
+            <a class="user-navigation-link" href="login.html">Войти</a>
+          </li>
+          <li class="user-navigation-item compare">
+            <a class="user-navigation-link" href="compare.html">Сравнить</a>
+          </li>
+          <li class="user-navigation-item cart">
+            <a class="user-navigation-link" href="cart.html">Корзина</a>
+          </li>
+        </ul>
+        <a class="phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
         <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss">
           <img src="img/logo-html.svg" alt="Интенсив HTML Academy">
         </a>
