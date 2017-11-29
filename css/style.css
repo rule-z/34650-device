@@ -43,7 +43,7 @@ body {
 body {
   font-family: "Open Sans", Arial, sans-serif;
 
-  background-image: url("../img/device-catalog31.jpg");
+  /*background-image: url("../img/credit.jpg");*/
   background-size: 1240px auto;
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -160,7 +160,24 @@ body {
 }
 
 .search-form-item {
+  position: relative;
+
   margin: 0;
+}
+
+.search-form-item::before {
+  content: "";
+
+  position: absolute;
+  top: 17px;
+  left: 3px;
+
+  width: 16px;
+  height: 16px;
+
+  background-image: url("../img/search.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .search-form-field {
@@ -272,7 +289,24 @@ body {
 }
 
 .signin .user-navigation-link {
+  position: relative;
+
   padding-left: 27px;
+}
+
+.signin .user-navigation-link::before {
+  content: "";
+
+  position: absolute;
+  top: 3px;
+  left: 0;
+
+  width: 13px;
+  height: 12px;
+
+  background-image: url("../img/signin.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .user-navigation-item .exit {
@@ -285,11 +319,45 @@ body {
 }
 
 .compare .user-navigation-link {
+  position: relative;
+
   padding-left: 20px;
 }
 
+.compare .user-navigation-link::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: 1px;
+
+  width: 10px;
+  height: 10px;
+
+  background-image: url("../img/compare.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
 .cart .user-navigation-link {
+  position: relative;
+
   padding-left: 24px;
+}
+
+.cart .user-navigation-link::before {
+  content: "";
+
+  position: absolute;
+  top: 3px;
+  left: 1px;
+
+  width: 12px;
+  height: 12px;
+
+  background-image: url("../img/cart.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .main-navigation {
@@ -317,7 +385,25 @@ body {
 }
 
 .dropdown {
+  position: relative;
+
   margin-right: auto;
+}
+
+.dropdown::before {
+  content: "";
+
+  position: absolute;
+  top: 2px;
+  right: 3px;
+
+  width: 16px;
+  height: 16px;
+
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.3;
 }
 
 .dropdown .main-navigation-link {
@@ -326,8 +412,8 @@ body {
 
 .dropdown:hover .catalog-list {
   display: flex;
-  margin-top: -13px; /* У main-navigation-link по шаблону нет line-height 50px (могло бы решить проблему) */
-  padding-top: 13px; /* поэтому костыль, чтобы dropdown-menu нормально появлялось и работало */
+  margin-top: -28px;
+  padding-top: 13px;
   z-index: 3;
 }
 
@@ -785,6 +871,8 @@ main.container {
 }
 
 .service-slider-item {
+  position: relative;
+
   display: none;
   flex-direction: column;
   justify-content: flex-end;
@@ -812,6 +900,51 @@ main.container {
   font-weight: 300;
   letter-spacing: 0.01em;
   color: #464646;
+}
+
+.service-slider-item:nth-child(1)::before {
+  content: "";
+
+  position: absolute;
+  top: 84px;
+  right: 66px;
+
+  width: 136px;
+  height: 164px;
+
+  background-image: url("../img/delivery.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.service-slider-item:nth-child(2)::before {
+  content: "";
+
+  position: absolute;
+  top: 60px;
+  right: 46px;
+
+  width: 171px;
+  height: 195px;
+
+  background-image: url("../img/warranty.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.service-slider-item:nth-child(3)::before {
+  content: "";
+
+  position: absolute;
+  top: 59px;
+  right: 70px;
+
+  width: 156px;
+  height: 188px;
+
+  background-image: url("../img/credit.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .brands {
