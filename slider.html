@@ -48,6 +48,10 @@
     padding: 0;
   }
 
+  .visually-hidden {
+    display: none;
+  }
+
   .centerer {
     width: 1160px;
     margin: 0 auto;
@@ -228,11 +232,11 @@
 
   .filter-main {
     min-height: 700px;
-    padding-left: 54px;
+    /*padding-left: 54px;*/
   }
 
   .filter-form {
-    width: 211px;
+    width: 212px;
     height: 630px;
   }
 
@@ -250,7 +254,7 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 5px;
+    left: 6px;
 
     width: 201px;
     height: 2px;
@@ -260,7 +264,8 @@
 
   .fieldset-title {
     margin: 0;
-    padding: 0 5px;
+    padding: 0;
+    padding-left: 6px;
 
     font-family: "Gilroy", Arial, sans-serif;
     font-size: 18px;
@@ -270,9 +275,9 @@
   }
 
   .coast-range {
-    width: 211px;
-    height: 22px;
-    padding: 10px 5px 10px 10px;
+    width: 212px;
+    height: 24px;
+    padding: 10px 0px 10px 11px;
     box-sizing: border-box;
 
     background-color: red;
@@ -294,6 +299,7 @@
 
   .coast-range-toggle {
     position: relative;
+    top: -11px;
 
     display: inline-block;
     width: 20px;
@@ -301,8 +307,10 @@
     border-radius: 50%;
 
     background-color: #ffffff;
-    /*z-index: 3;*/
     box-shadow: 0px 2px 2px #dadada;
+    cursor: pointer;
+
+    opacity: 0.5;
   }
 
   .coast-range-toggle::before {
@@ -317,21 +325,26 @@
     border-radius: 50%;
 
     background-color: #b1b1b1;
-    /*z-index: 3;*/
   }
 
   .toggle-min {
-    top: -12px;
     left: -10px;
   }
 
+  .toggle-min:hover {
+    transform: scale(1.1);
+  }
+
   .toggle-max {
-    top: -12px;
     left: 76px;
   }
 
+  .toggle-max:hover {
+    transform: scale(1.1);
+  }
+
   .coast-range-count {
-    width: 211px;
+    width: 212px;
     height: 22px;
     box-sizing: border-box;
 
@@ -362,7 +375,15 @@
     margin: 0;
   }
 
+  .input-checkbox:checked + label::before {
+    background: url("img/checkbox-on.svg");
+  }
+
   .color-item label {
+    position: relative;
+
+    padding-left: 40px;
+
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -370,6 +391,68 @@
     letter-spacing: 0.01em;
     color: #000000;
   }
+
+  .color-item label::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 0px;
+
+    width: 27px;
+    height: 23px;
+
+    background: url("img/checkbox-off.svg");
+    background-repeat: no-repeat;
+  }
+
+  .filter-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .filter-option {
+    display: flex;
+    align-items: center;
+  }
+
+  .input-radio:checked + label::before {
+    background: url("img/radio-on.svg");
+  }
+
+
+  .filter-option label {
+    position: relative;
+
+    padding-left: 40px;
+
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+
+  .filter-option label::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    left: 0px;
+
+    width: 25px;
+    height: 25px;
+
+    background: url("img/radio-off.svg");
+    background-repeat: no-repeat;
+  }
+
+
+
+
+
+
 
   .catalog-main .catalog-right {
     height: 1217px;
@@ -487,11 +570,11 @@
               <h2 class="fieldset-title">Bluetooth</h2>
               <ul class="filter-list">
                 <li class="filter-option">
-                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="bluetooth-avialability" value="yes" id="filter-bluetooth-yes">
+                  <input class="visually-hidden input-radio" type="radio" name="bluetooth-avialability" value="yes" id="filter-bluetooth-yes">
                   <label for="filter-bluetooth-yes">Есть</label>
                 </li>
                 <li class="filter-option">
-                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="bluetooth-avialability" value="no" id="filter-bluetooth-no" checked>
+                  <input class="visually-hidden input-radio" type="radio" name="bluetooth-avialability" value="no" id="filter-bluetooth-no" checked>
                   <label for="filter-bluetooth-no">Нет</label>
                 </li>
               </ul>
