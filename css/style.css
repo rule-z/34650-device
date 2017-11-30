@@ -43,7 +43,7 @@ body {
 body {
   font-family: "Open Sans", Arial, sans-serif;
 
-  /*background-image: url("../img/credit.jpg");*/
+  background-image: url("../img/device-index2.jpg");
   background-size: 1240px auto;
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -581,6 +581,8 @@ main.container {
   display: none;
 }
 
+
+
 #product-1:checked ~ .slider-list .slider-item:nth-child(1) {
   display: flex;
   flex-direction: row;
@@ -643,11 +645,74 @@ main.container {
 }
 
 .slider-item-info {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   width: 560px;
+}
+
+.slider-item-info::after {
+  content: "";
+
+  position: absolute;
+  top: 37px;
+  left: 0;
+
+  width: 100px;
+  height: 7px;
+
+  background-color: #ffffff;
+}
+
+.slider-item:nth-child(1) .slider-item-info::before {
+  content: "01";
+
+  position: absolute;
+  top: -13px;
+  right: 46px;
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 179.2px;
+  font-weight: 800;
+  line-height: 179.2px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  z-index: -1;
+}
+
+.slider-item:nth-child(2) .slider-item-info::before {
+  content: "02";
+
+  position: absolute;
+  top: -13px;
+  right: 47px;
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 179.2px;
+  font-weight: 800;
+  line-height: 179.2px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  z-index: -1;
+}
+
+.slider-item:nth-child(3) .slider-item-info::before {
+  content: "03";
+
+  position: absolute;
+  top: -13px;
+  right: 48px;
+
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 179.2px;
+  font-weight: 800;
+  line-height: 179.2px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  z-index: -1;
 }
 
 .slider-properties {
@@ -1034,13 +1099,30 @@ main.container {
   list-style-type: none;
 }
 
-.deliveries-link {
+.deliveries-item {
+  position: relative;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 40px;
   color: #000000;
-  text-decoration: none;
+}
+
+.deliveries-item::before {
+  content: "";
+
+  position: absolute;
+  top: 11px;
+  left: -40px;
+
+  width: 18px;
+  height: 18px;
+
+  background-image: url("../img/deliveries-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.1;
 }
 
 .info-link.button {
@@ -1871,6 +1953,11 @@ fieldset:nth-child(2) .fieldset-title {
 }
 
 /* Styles for Footer block */
+
+.main-footer .signin .user-navigation-link::before {
+  color: red;
+  fill: currentColor;
+}
 
 .main-footer {
   width: 100%;
