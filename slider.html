@@ -43,553 +43,220 @@
 
   html,
   body {
-    height: 1466px;
     margin: 0;
     padding: 0;
+  }
+
+  .centerer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: gray;
   }
 
   .visually-hidden {
     display: none;
   }
 
-  .centerer {
-    width: 1160px;
-    margin: 0 auto;
-  }
+  .modal-write-us {
+    position: fixed;
 
-  .catalog-nav-info {
-    height: 179px;
-    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 960px;
+    height: 553px;
+    padding: 78px 100px;
     box-sizing: border-box;
 
-    background-color: dodgerblue;
+    background-color: #ffffff;
   }
 
-  .catalog-title {
-    font-family: "Gilroy", Arial, sans-serif;
-    font-size: 47px;
-    font-weight: 800;
-    letter-spacing: 0.01em;
-    color: #000000;
-    margin: 0;
-  }
+  .write-us-form {
+    position: relative;
 
-  .breadcrumbs {
-    margin: 0;
-    padding: 0;
-
-    list-style-type: none;
-  }
-
-  .breadcrumbs-item {
-    display: inline-block;
-  }
-
-  .breadcrumbs-link {
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 36px;
-    letter-spacing: 0.01em;
-    color: rgba(0, 0, 0, 0.3);
-
-    text-decoration: none;
-  }
-
-  .breadcrumbs-link:hover {
-    color: rgba(0, 0, 0, 0.6);
-  }
-
-  .breadcrumbs-link:active {
-    color: rgba(0, 0, 0, 0.1);
-  }
-
-  .catalog-header {
-    width: 100%;
-    height: 70px;
-
-    background: linear-gradient(to right, #dbdbdb 0%, #dbdbdb 50%, #ebebeb 50%, #ebebeb 100%)
-  }
-
-  .catalog-main {
-    width: 100%;
-    height: 1217px;
-
-    background: linear-gradient(to right, #eeeeee 0%, #eeeeee 50%, #ffffff 50%, #ffffff 100%)
-  }
-
-  .catalog-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 760px;
+    height: 397px;
   }
 
-  .catalog-left {
-    width: 328px;
-  }
-
-  .catalog-right {
-    width: 832px;
-  }
-
-  .catalog-header .catalog-left {
-    height: 70px;
-
-    background-color: #dbdbdb;
-  }
-
-  .catalog-header .catalog-right {
-    height: 70px;
-
-    background-color: #ebebeb;
-  }
-
-  .filter-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    height: 70px;
-    padding-left: 54px;
-  }
-
-  .filter-header-title {
-    margin: 0;
-
-    font-family: "Gilroy", Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    color: #000000;
-    text-transform: uppercase;
-  }
-
-  .sorting {
+  .modal .row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-    height: 70px;
-    padding-left: 73px;
-  }
-
-  .sorting-title {
+    width: 100%;
     margin: 0;
-
-    font-family: "Gilroy", Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    color: #000000;
-    text-transform: uppercase;
+    margin-bottom: 35px;
   }
 
-  .sorting-type {
-    margin: 0;
-    padding: 0;
-
-    list-style-type: none;
+  .modal .row:last-of-type {
+    margin-bottom: 40px;
   }
 
-  .sorting-type-item {
-    display: inline-block;
-  }
-
-  .sorting-type-link {
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    color: rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-  }
-
-  .sorting-type-link:hover {
-    color: rgba(0, 0, 0, 0.6);
-  }
-
-  .sorting-type-link:active {
-    color: rgba(0, 0, 0, 1);
-  }
-
-  .sorting-direction {
-    margin: 0;
-    padding: 0;
-
-    list-style-type: none;
-  }
-
-  .sorting-direction-item {
-    display: inline-block;
-  }
-
-  .catalog-main .catalog-left {
-    height: 1217px;
-
-    background-color: #eeeeee;
-  }
-
-  .filter-main {
-    min-height: 700px;
-    /*padding-left: 54px;*/
-  }
-
-  .filter-form {
-    width: 212px;
-    height: 630px;
-  }
-
-  fieldset {
-    position: relative;
-
-    margin: 0;
-    padding: 0;
-    border: none;
-
-    background-color: dodgerblue;
-  }
-
-  fieldset::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 6px;
-
-    width: 201px;
-    height: 2px;
-
-    background-color: #000000;
-  }
-
-  .fieldset-title {
-    margin: 0;
-    padding: 0;
-    padding-left: 6px;
+  .modal label {
+    width: 360px;
 
     font-family: "Gilroy", Arial, sans-serif;
     font-size: 18px;
     font-weight: 800;
-    letter-spacing: 0.01em;
+    line-height: 18px;
     color: #000000;
   }
 
-  .coast-range {
-    width: 212px;
-    height: 24px;
-    padding: 10px 0px 10px 11px;
+  .modal input,
+  .modal textarea {
+    display: block;
+    width: 360px;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0 17px;
+    border: 3px solid transparent;
     box-sizing: border-box;
 
-    background-color: red;
+    background-color: rgba(229, 229, 229, 0.5);
+    outline: none;
   }
 
-  .coast-scale {
-    width: 196px;
-    height: 2px;
-
-    background-color: #dbdbdb;
+  .modal input,
+  .modal input::placeholder,
+  .modal textarea,
+  .modal textarea::placeholder {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(70, 70, 70, 0.4);
   }
 
-  .coast-scale-set {
-    width: 110px;
-    height: 2px;
-
-    background-color: #91c92f;
+  .modal input:hover,
+  .modal textarea:hover {
+    background-color: rgba(229, 229, 229, 0.8);
   }
 
-  .coast-range-toggle {
-    position: relative;
-    top: -11px;
-
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+  .modal input:focus,
+  .modal input:invalid:focus,
+  .modal textarea:focus,
+  .modal textarea:invalid:focus {
+    border-color: rgba(240, 197, 46, 0.5);
 
     background-color: #ffffff;
-    box-shadow: 0px 2px 2px #dadada;
-    cursor: pointer;
+  }
 
+  .modal input:focus,
+  .modal input:focus::placeholder,
+  .modal textarea:focus,
+  .modal textarea:focus::placeholder {
+    color: rgba(70, 70, 70, 1);
+  }
+
+  .modal input:invalid,
+  .modal textarea:invalid {
+    background-color: rgba(237, 181, 181, 0.5);
+  }
+
+  .modal textarea {
+    width: 760px;
+    height: 156px;
+    padding: 17px;
+  }
+
+  .modal .button {
+    position: relative;
+
+    width: 200px;
+    height: 40px;
+    border: none;
+
+    background-color: transparent;
+
+    font-family: "Gilroy", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #000000;
+    outline: none;
+  }
+
+  .modal .button::before {
+    content: "";
+
+    position: absolute;
+    top: 16px;
+    left: 0;
+
+    width: 200px;
+    height: 8px;
+
+    background-color: #f0c52e;
+    z-index: -1;
+  }
+
+  .modal .button:hover::before {
+    top: 0;
+
+    height: 40px;
+  }
+
+  .modal .button:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .modal .modal-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+
+    background-image: url("img/modal-close.svg");
+    outline: none;
+    cursor: pointer;
     opacity: 0.5;
   }
 
-  .coast-range-toggle::before {
-    content: "";
-
-    position: absolute;
-    top: 8px;
-    left: 8px;
-
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-
-    background-color: #b1b1b1;
+  .modal-close:hover {
+    opacity: 1;
   }
 
-  .toggle-min {
-    left: -10px;
-  }
-
-  .toggle-min:hover {
-    transform: scale(1.1);
-  }
-
-  .toggle-max {
-    left: 76px;
-  }
-
-  .toggle-max:hover {
-    transform: scale(1.1);
-  }
-
-  .coast-range-count {
-    width: 212px;
-    height: 22px;
-    box-sizing: border-box;
-
-    background-color: red;
-  }
-
-  .coast-range-count span {
-    font-family: "Gilroy", Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22.27px;
-    color: rgba(0, 0, 0, 0.2);
-  }
-
-  .color-list {
-    margin: 0;
-    padding: 0;
-
-    list-style-type: none;
-  }
-
-  .color-item {
-    display: flex;
-    align-items: center;
-  }
-
-  .input-checkbox {
-    margin: 0;
-  }
-
-  .input-checkbox:checked + label::before {
-    background: url("img/checkbox-on.svg");
-  }
-
-  .color-item label {
-    position: relative;
-
-    padding-left: 40px;
-
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 40px;
-    letter-spacing: 0.01em;
-    color: #000000;
-  }
-
-  .color-item label::before {
-    content: "";
-
-    position: absolute;
-    top: 8px;
-    left: 0px;
-
-    width: 27px;
-    height: 23px;
-
-    background: url("img/checkbox-off.svg");
-    background-repeat: no-repeat;
-  }
-
-  .filter-list {
-    margin: 0;
-    padding: 0;
-  }
-
-  .filter-option {
-    display: flex;
-    align-items: center;
-  }
-
-  .input-radio:checked + label::before {
-    background: url("img/radio-on.svg");
-  }
-
-
-  .filter-option label {
-    position: relative;
-
-    padding-left: 40px;
-
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 40px;
-    letter-spacing: 0.01em;
-    color: #000000;
-  }
-
-  .filter-option label::before {
-    content: "";
-
-    position: absolute;
-    top: 8px;
-    left: 0px;
-
-    width: 25px;
-    height: 25px;
-
-    background: url("img/radio-off.svg");
-    background-repeat: no-repeat;
-  }
-
-
-
-
-
-
-
-  .catalog-main .catalog-right {
-    height: 1217px;
-
-    background-color: #ffffff;
+  .modal-close:active {
+    opacity: 0.3;
   }
 </style>
 <body>
-<!-- Тест мейна контролов -->
-<main class="main-container">
-  <section class="catalog-nav-info centerer">
-    <h1 class="catalog-title">Моноподы для селфи</h1>
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs-item">
-        <a class="breadcrumbs-link" href="index.html">Главная</a>
-      </li>
-      <li class="breadcrumbs-item">
-        <a class="breadcrumbs-link" href="catalog.html">Каталог товаров</a>
-      </li>
-      <li class="breadcrumbs-item breadcrumbs-item-current">
-        <a class="breadcrumbs-link">Моноподы для селфи</a>
-      </li>
-    </ul>
+<!-- Тест модального окна контролов -->
+<div class="centerer">
+  <section class="modal modal-write-us">
+    <h2 class="visually-hidden">Напишите нам</h2>
+    <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
+      <p class="row">
+        <label for="write-us-name-field">Ваше имя:
+          <input type="text" id="write-us-name-field" name="write-us-name" placeholder="Представьтесь, пожалуйста" required>
+        </label>
+        <label for="write-us-email-field">Ваше e-mail:
+          <input type="email" id="write-us-email-field" name="write-us-email" placeholder="Для отправки ответа" required>
+        </label>
+      </p>
+      <p class="row">
+        <label for="write-us-letter-field">Текст письма:
+          <textarea id="write-us-letter-field" name="write-us-letter" placeholder="В свободной форме" required></textarea>
+        </label>
+      </p>
+      <button class="button" type="submit">Отправить</button>
+    </form>
+    <button class="modal-close" type="button"></button>
   </section>
-
-  <section class="catalog-header">
-    <div class="catalog-wrapper centerer">
-      <div class="catalog-left">
-        <div class="filter-header">
-          <h2 class="filter-header-title">Фильтр:</h2>
-        </div>
-      </div>
-
-      <div class="catalog-right">
-        <div class="sorting">
-          <h2 class="sorting-title">Сортировка:</h2>
-
-          <ul class="sorting-type">
-            <li class="sorting-type-item">
-              <a class="sorting-type-link catalog-header-current" href="#">По цене</a>
-            </li>
-            <li class="sorting-type-item">
-              <a class="sorting-type-link" href="#">По типу</a>
-            </li>
-            <li class="sorting-type-item">
-              <a class="sorting-type-link" href="#">По популярности</a>
-            </li>
-          </ul>
-
-          <ul class="sorting-direction">
-            <li class="sorting-direction-item">
-              <a class="sorting-direction-link triangle-up catalog-header-current">По убыванию</a> <!-- Текст временно пока нет иконок -->
-            </li>
-            <li class="sorting-direction-item">
-              <a class="sorting-direction-link triangle-down">По возрастанию</a> <!-- Текст временно пока нет иконок -->
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="catalog-main">
-    <div class="catalog-wrapper centerer">
-      <div class="catalog-left">
-        <div class="filter-main">
-          <form class="filter-form" action="https://echo.htmlacademy.ru" method="post">
-            <fieldset>
-              <h2 class="fieldset-title">Стоимость</h2>
-              <div class="coast-range">
-                <div class="coast-scale">
-                  <div class="coast-scale-set"></div>
-                </div>
-                <div class="coast-range-toggle toggle-min"></div>
-                <div class="coast-range-toggle toggle-max"></div>
-              </div>
-
-              <div class="coast-range-count">
-                <span>от 0</span>
-                <span>до 5000</span>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <h2 class="fieldset-title">Цвет</h2>
-              <ul class="color-list">
-                <li class="color-item">
-                  <input class="visually-hidden input-checkbox" type="checkbox" name="black-color" id="color-item-black" checked>
-                  <label for="color-item-black">Черный</label>
-                </li>
-
-                <li class="color-item">
-                  <input class="visually-hidden input-checkbox" type="checkbox" name="white-color" id="color-item-white">
-                  <label for="color-item-white">Белый</label>
-                </li>
-
-                <li class="color-item">
-                  <input class="visually-hidden input-checkbox" type="checkbox" name="blue-color" id="color-item-blue" checked>
-                  <label for="color-item-blue">Синий</label>
-                </li>
-
-                <li class="color-item">
-                  <input class="visually-hidden input-checkbox" type="checkbox" name="red-color" id="color-item-red" checked>
-                  <label for="color-item-red">Красный</label>
-                </li>
-
-                <li class="color-item">
-                  <input class="visually-hidden input-checkbox" type="checkbox" name="pink-color" id="color-item-pink">
-                  <label for="color-item-pink">Розовый</label>
-                </li>
-              </ul>
-            </fieldset>
-
-            <fieldset>
-              <h2 class="fieldset-title">Bluetooth</h2>
-              <ul class="filter-list">
-                <li class="filter-option">
-                  <input class="visually-hidden input-radio" type="radio" name="bluetooth-avialability" value="yes" id="filter-bluetooth-yes">
-                  <label for="filter-bluetooth-yes">Есть</label>
-                </li>
-                <li class="filter-option">
-                  <input class="visually-hidden input-radio" type="radio" name="bluetooth-avialability" value="no" id="filter-bluetooth-no" checked>
-                  <label for="filter-bluetooth-no">Нет</label>
-                </li>
-              </ul>
-            </fieldset>
-            <button class="button" type="submit">Показать</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="catalog-right">
-
-      </div>
-    </div>
-  </section>
-</main>
-<!-- Тест мейна контролов -->
+</div>
+<!-- Тест модального окна контролов -->
 </body>
 </html>

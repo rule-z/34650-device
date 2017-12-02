@@ -43,7 +43,7 @@ body {
 body {
   font-family: "Open Sans", Arial, sans-serif;
 
-  background-image: url("../img/device-catalog.jpg");
+  /*background-image: url("../img/device-catalog.jpg");*/
   background-size: 1240px auto;
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -1877,81 +1877,200 @@ fieldset:nth-child(2) .fieldset-title {
   color: #000000;
 }
 
-.write-us-form label {
+.modal-write-us {
+  position: fixed;
+  top: calc(50% - 275px);
+  left: calc(50% - 480px);
+
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 960px;
+  height: 553px;
+  padding: 78px 100px;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 60px #000000;
+  z-index: 1;
+}
+
+.write-us-form {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 760px;
+  height: 397px;
+}
+
+.modal .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.modal-write-us .row:last-of-type {
+  margin-bottom: 40px;
+}
+
+.modal-map .row {
+  margin: 0;
+}
+
+.modal label {
+  width: 360px;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 18px;
+  color: #000000;
 }
 
-.write-us-form input,
-.write-us-form textarea {
+.modal input,
+.modal textarea {
+  display: block;
+  width: 360px;
+  height: 50px;
+  margin-top: 10px;
+  padding: 0 17px;
+  border: 3px solid transparent;
+  box-sizing: border-box;
+
+  background-color: rgba(229, 229, 229, 0.5);
+  outline: none;
+}
+
+.modal input,
+.modal input::placeholder,
+.modal textarea,
+.modal textarea::placeholder {
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  color: #464646;
-
-  background-color: #e5e5e5;
-  border: 2px solid transparent;
-  opacity: 0.5;
-  outline: none;
+  color: rgba(70, 70, 70, 0.4);
 }
 
-.write-us-form input::placeholder,
-.write-us-form textarea::placeholder {
-  opacity: 0.4;
+.modal input:hover,
+.modal textarea:hover {
+  background-color: rgba(229, 229, 229, 0.8);
 }
 
-.write-us-form input:hover,
-.write-us-form textarea:hover {
-  opacity: 0.8;
-}
-
-.write-us-form input:hover::placeholder,
-.write-us-form textarea:hover::placeholder {
-  opacity: 0.4;
-}
-
-.write-us-form input:focus,
-.write-us-form textarea:focus {
+.modal input:focus,
+.modal input:invalid:focus,
+.modal textarea:focus,
+.modal textarea:invalid:focus {
   border-color: rgba(240, 197, 46, 0.5);
-  background-color: #FFFFFF;
-  opacity: 1;
-  outline: none;
+
+  background-color: #ffffff;
 }
 
-.write-us-form input:focus::placeholder,
-.write-us-form textarea:focus::placeholder {
-  opacity: 1;
+.modal input:focus,
+.modal input:focus::placeholder,
+.modal textarea:focus,
+.modal textarea:focus::placeholder {
+  color: rgba(70, 70, 70, 1);
 }
 
-.write-us-form input:invalid,
-.write-us-form textarea:invalid {
+.modal input:invalid,
+.modal textarea:invalid {
   background-color: rgba(237, 181, 181, 0.5);
-  border-color: transparent;
 }
 
-.write-us-form input:invalid:hover,
-.write-us-form input:invalid:focus,
-.write-us-form textarea:invalid:hover,
-.write-us-form textarea:invalid:focus {
-  opacity: 0.5;
+.modal textarea {
+  width: 760px;
+  height: 156px;
+  padding: 17px;
 }
 
-.modal button {
+.modal .button {
+  position: relative;
+
+  width: 200px;
+  height: 40px;
+  margin: 0;
+  border: none;
+
+  background-color: transparent;
+
   font-family: "Gilroy", Arial, sans-serif;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.2em;
-
-  background-color: #f0c52e;
-  border: none;
+  color: #000000;
   outline: none;
 }
 
-.modal button:active {
-  color: #f7e184;
-  background-color: #000000;
+.modal .button::before {
+  content: "";
+
+  position: absolute;
+  top: 16px;
+  left: 0;
+
+  width: 200px;
+  height: 8px;
+
+  background-color: #f0c52e;
+  z-index: -1;
+}
+
+.modal .button:hover::before {
+  top: 0;
+
+  height: 40px;
+}
+
+.modal .button:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.modal .modal-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+
+  background-image: url("../img/modal-close.svg");
+  outline: none;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-close:active {
+  opacity: 0.3;
+}
+
+.modal-map {
+  position: fixed;
+  top: calc(50% - 280px);
+  left: calc(50% - 480px);
+  display: none;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 960px;
+  height: 559px;
+  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 60px #000000;
+  z-index: 1;
 }
 
 /* Styles for Footer block */
