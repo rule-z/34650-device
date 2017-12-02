@@ -168,7 +168,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   padding: 0 60px;
 }
 
@@ -180,6 +180,8 @@ body {
   position: relative;
 
   margin: 0;
+
+  font-size: 0;
 }
 
 .search-form-item::before {
@@ -242,7 +244,6 @@ body {
   letter-spacing: 0.01em;
   color: #000000;
 
-  margin-left: -4px;
   background-color: transparent;
   border: 2px solid #000000;
   border-radius: 0;
@@ -353,8 +354,8 @@ body {
 
 .main-navigation {
   position: relative;
-  width: 1040px;
-  padding: 0 60px;
+  width: 1048px;
+  padding: 0 55px;
 }
 
 .main-navigation-list {
@@ -363,12 +364,11 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
-  padding-top: 15px; /* Часть костыля для работы dropdown-menu, хотя я говорил можно было бы обойтись line-height 50 */
+  /*padding-top: 15px; !* Часть костыля для работы dropdown-menu, хотя я говорил можно было бы обойтись line-height 50 *!*/
   list-style-type: none;
 }
 
 .main-navigation-item:last-child {
-  margin-right: -3px;
   margin-left: 108px;
 }
 
@@ -379,6 +379,7 @@ body {
 .dropdown {
   position: relative;
 
+  margin-left: 4px;
   margin-right: auto;
 }
 
@@ -512,23 +513,6 @@ main.container {
   transform: translateX(-50%);
 }
 
-.slider-controls .active:before {
-  content: "";
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 2;
-
-  width: 4px;
-  height: 4px;
-  margin: -3px;
-
-  background-color: inherit;
-  border: 1px solid #000000;
-  border-radius: 50%;
-}
-
 .slider-controls label {
   position: relative;
 
@@ -604,10 +588,10 @@ main.container {
   z-index: 2;
   width: 4px;
   height: 4px;
-  margin: -3px;
   background-color: #ffffff;
   border: 1px solid #000000;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slider-item-info .slider-item-title {
@@ -851,11 +835,15 @@ main.container {
   height: 8px;
   background-color: #f0c52e;
   z-index: -1;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .service-slider-controls-item:hover::before {
   top: 0;
   height: 40px;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .service-slider-controls-item:active {
@@ -1894,11 +1882,14 @@ fieldset:nth-child(2) .fieldset-title {
   color: #000000;
 }
 
-.modal-write-us {
+.modal {
   position: fixed;
-  top: calc(50% - 275px);
-  left: calc(50% - 480px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.modal-write-us {
   display: none;
   flex-direction: column;
   justify-content: flex-end;
@@ -2076,9 +2067,9 @@ fieldset:nth-child(2) .fieldset-title {
 }
 
 .modal-map {
-  position: fixed;
-  top: calc(50% - 280px);
-  left: calc(50% - 480px);
+  /*position: fixed;*/
+  /*top: calc(50% - 280px);*/
+  /*left: calc(50% - 480px);*/
   display: none;
   justify-content: flex-end;
   align-items: flex-start;
