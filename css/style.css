@@ -57,10 +57,6 @@ body {
   margin: -1px;
 }
 
-.status-hidden {
-  display: none;
-}
-
 .centerer {
   width: 1160px;
   margin: 0 auto;
