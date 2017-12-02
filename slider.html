@@ -1,262 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="utf-8">
+  <title>TEST</title>
+  <style>
+    html,
+    body {
+      width: 100vw%;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: dodgerblue;
+    }
+
+    .centerer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
-<style>
-  @font-face {
-    font-family: "Gilroy";
-    font-weight: 800;
-    font-style: normal;
-    src: local("Gilroy Extrabold"),
-    url("fonts/gilroyextrabold.woff2") format("woff2"),
-    url("fonts/gilroyextrabold.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Gilroy";
-    font-weight: 300;
-    font-style: normal;
-    src: local("Gilroy Light"),
-    url("fonts/gilroylight.woff2") format("woff2"),
-    url("fonts/gilroylight.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-style: normal;
-    src: local("Open Sans Regular"),
-    url("fonts/opensans.woff2") format("woff2"),
-    url("fonts/opensans.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-style: normal;
-    src: local("Open Sans Light"),
-    url("fonts/opensanslight.woff2") format("woff2"),
-    url("fonts/opensanslight.woff") format("woff");
-  }
-
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  .centerer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-
-    background-color: gray;
-  }
-
-  .visually-hidden {
-    display: none;
-  }
-
-  .modal-write-us {
-    position: fixed;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    width: 960px;
-    height: 553px;
-    padding: 78px 100px;
-    box-sizing: border-box;
-
-    background-color: #ffffff;
-  }
-
-  .write-us-form {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    width: 760px;
-    height: 397px;
-  }
-
-  .modal .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 35px;
-  }
-
-  .modal .row:last-of-type {
-    margin-bottom: 40px;
-  }
-
-  .modal label {
-    width: 360px;
-
-    font-family: "Gilroy", Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 18px;
-    color: #000000;
-  }
-
-  .modal input,
-  .modal textarea {
-    display: block;
-    width: 360px;
-    height: 50px;
-    margin-top: 10px;
-    padding: 0 17px;
-    border: 3px solid transparent;
-    box-sizing: border-box;
-
-    background-color: rgba(229, 229, 229, 0.5);
-    outline: none;
-  }
-
-  .modal input,
-  .modal input::placeholder,
-  .modal textarea,
-  .modal textarea::placeholder {
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    color: rgba(70, 70, 70, 0.4);
-  }
-
-  .modal input:hover,
-  .modal textarea:hover {
-    background-color: rgba(229, 229, 229, 0.8);
-  }
-
-  .modal input:focus,
-  .modal input:invalid:focus,
-  .modal textarea:focus,
-  .modal textarea:invalid:focus {
-    border-color: rgba(240, 197, 46, 0.5);
-
-    background-color: #ffffff;
-  }
-
-  .modal input:focus,
-  .modal input:focus::placeholder,
-  .modal textarea:focus,
-  .modal textarea:focus::placeholder {
-    color: rgba(70, 70, 70, 1);
-  }
-
-  .modal input:invalid,
-  .modal textarea:invalid {
-    background-color: rgba(237, 181, 181, 0.5);
-  }
-
-  .modal textarea {
-    width: 760px;
-    height: 156px;
-    padding: 17px;
-  }
-
-  .modal .button {
-    position: relative;
-
-    width: 200px;
-    height: 40px;
-    border: none;
-
-    background-color: transparent;
-
-    font-family: "Gilroy", Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    color: #000000;
-    outline: none;
-  }
-
-  .modal .button::before {
-    content: "";
-
-    position: absolute;
-    top: 16px;
-    left: 0;
-
-    width: 200px;
-    height: 8px;
-
-    background-color: #f0c52e;
-    z-index: -1;
-  }
-
-  .modal .button:hover::before {
-    top: 0;
-
-    height: 40px;
-  }
-
-  .modal .button:active {
-    color: rgba(0, 0, 0, 0.3);
-  }
-
-  .modal .modal-close {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-
-    width: 55px;
-    height: 55px;
-    border: none;
-    border-radius: 50%;
-
-    background-image: url("img/modal-close.svg");
-    outline: none;
-    cursor: pointer;
-    opacity: 0.5;
-  }
-
-  .modal-close:hover {
-    opacity: 1;
-  }
-
-  .modal-close:active {
-    opacity: 0.3;
-  }
-</style>
 <body>
-<!-- Тест модального окна контролов -->
 <div class="centerer">
-  <section class="modal modal-write-us">
-    <h2 class="visually-hidden">Напишите нам</h2>
-    <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
-      <p class="row">
-        <label for="write-us-name-field">Ваше имя:
-          <input type="text" id="write-us-name-field" name="write-us-name" placeholder="Представьтесь, пожалуйста" required>
-        </label>
-        <label for="write-us-email-field">Ваше e-mail:
-          <input type="email" id="write-us-email-field" name="write-us-email" placeholder="Для отправки ответа" required>
-        </label>
-      </p>
-      <p class="row">
-        <label for="write-us-letter-field">Текст письма:
-          <textarea id="write-us-letter-field" name="write-us-letter" placeholder="В свободной форме" required></textarea>
-        </label>
-      </p>
-      <button class="button" type="submit">Отправить</button>
-    </form>
-    <button class="modal-close" type="button"></button>
-  </section>
+  <?xml version="1.0" encoding="utf-8"?>
+  <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="8px" height="8px" viewBox="0 0 8 8" enable-background="new 0 0 8 8" xml:space="preserve">
+    <g>
+      <path d="M9,8c-2.206,0-4-1.794-4-4c0-2.206,1.794-4,4-4c2.206,0,4,1.794,4,4C13,11.206,11.206,13,9,13z M9,7C7.897,7,7,7.897,7,9
+      c0,1.103,0.897,2,2,2c1.103,0,2-0.897,2-2C11,7.897,10.103,7,9,7z"/>
+    </g>
+  </svg>
 </div>
-<!-- Тест модального окна контролов -->
 </body>
 </html>
