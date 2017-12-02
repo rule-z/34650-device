@@ -360,7 +360,6 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
-  /*padding-top: 15px; !* Часть костыля для работы dropdown-menu, хотя я говорил можно было бы обойтись line-height 50 *!*/
   list-style-type: none;
 }
 
