@@ -1877,11 +1877,45 @@ fieldset:nth-child(2) .fieldset-title {
   color: #000000;
 }
 
+@keyframes appearance {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-45%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(-55%, -50%);
+  }
 }
 
 .modal-write-us {
@@ -1895,7 +1929,7 @@ fieldset:nth-child(2) .fieldset-title {
   box-sizing: border-box;
 
   background-color: #ffffff;
-  box-shadow: 0px 0px 60px #000000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -2041,6 +2075,7 @@ fieldset:nth-child(2) .fieldset-title {
   position: absolute;
   top: 22px;
   right: 22px;
+  z-index: 3;
 
   width: 55px;
   height: 55px;
@@ -2074,6 +2109,33 @@ fieldset:nth-child(2) .fieldset-title {
   background-color: #ffffff;
   box-shadow: 0px 0px 60px #000000;
   z-index: 1;
+}
+
+.modal-map iframe {
+  position: relative;
+
+  border: none;
+
+  z-index: 2;
+}
+
+.modal-map p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  margin: 0;
+}
+
+.modal-show {
+  display: flex;
+
+  animation: appearance 0.3s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 /* Styles for Footer block */
