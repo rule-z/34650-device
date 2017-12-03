@@ -451,12 +451,13 @@
 
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
-    <iframe src="https://yandex.ru/map-widget/v1/-/CBaGI8RlCA" width="960" height="559" frameborder="0"></iframe>
+    <div id="map"></div>
     <p class="row">
       <img src="img/map-big.jpg" width="960" height="559" alt="Офис компании по адресу ул.Большая Конюшенная 19/8, Санкт-Петербург">
     </p>
     <button class="modal-close" type="button"></button>
   </section>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMOJ89I7lhVb_MfJX2gUpHog7CHZFwf68&callback=initMap" async defer></script>
   <script src="js/core.js"></script>
   </body>
 </html>
