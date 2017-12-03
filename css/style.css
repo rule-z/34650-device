@@ -1382,27 +1382,27 @@ main.container {
 }
 
 .sorting-direction-link {
+  display: inline-block;
   width: 11px;
   height: 10px;
-}
 
-.sorting-direction-link:hover img {
-  opacity: 0.4;
-}
-
-.sorting-direction-link:active img {
-  opacity: 1;
-}
-
-.sorting-direction-link img {
+  background-image: url("../img/sort-icon.svg");
   opacity: 0.2;
 }
 
-.descending img {
+.sorting-direction-link:hover {
+  opacity: 0.4;
+}
+
+.sorting-direction-link:active {
+  opacity: 1;
+}
+
+.descending {
   transform: rotate(180deg);
 }
 
-.catalog-header-current:hover img {
+.catalog-header-current:hover {
   opacity: 1;
 }
 
@@ -1410,7 +1410,7 @@ main.container {
   color: rgba(0, 0, 0, 1);
 }
 
-.catalog-header-current img {
+.catalog-header-current {
   opacity: 1;
 }
 
