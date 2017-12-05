@@ -34,7 +34,7 @@ close.addEventListener("click", function (evt) {
 });
 
 feedbackForm.addEventListener("submit", function (evt) {
-  if (!feedbackName.value || !feedbackText.value) {
+  if (!feedbackName.value || !feedbackEmail.value || !feedbackText.value) {
     evt.preventDefault();
     feedbackWindow.classList.remove("modal-error");
     feedbackWindow.offsetWidth = feedbackWindow.offsetWidth;
