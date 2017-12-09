@@ -543,27 +543,27 @@ main.container {
   display: none;
 }
 
-#product-1:checked ~ .slider-list .slider-item:nth-child(1) {
+.product-s1:checked ~ .slider-list .slider-item:nth-child(1) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#product-2:checked ~ .slider-list .slider-item:nth-child(2) {
+.product-s2:checked ~ .slider-list .slider-item:nth-child(2) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#product-3:checked ~ .slider-list .slider-item:nth-child(3) {
+.product-s3:checked ~ .slider-list .slider-item:nth-child(3) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#product-1:checked ~ .slider-controls .slider-controls-item--1::before,
-#product-2:checked ~ .slider-controls .slider-controls-item--2::before,
-#product-3:checked ~ .slider-controls .slider-controls-item--3::before {
+.product-s1:checked ~ .slider-controls .slider-controls-item--1::before,
+.product-s2:checked ~ .slider-controls .slider-controls-item--2::before,
+.product-s3:checked ~ .slider-controls .slider-controls-item--3::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -881,51 +881,51 @@ main.container {
   background-color: #000000;
 }
 
-#service-1:checked ~ .service-slider-controls .service-slider-controls-item--1 {
+.service-s1:checked ~ .service-slider-controls .service-slider-controls-item--1 {
   color: #f7e184;
   transition: none;
 }
 
-#service-1:checked ~ .service-slider-controls .service-slider-controls-item--1::before {
+.service-s1:checked ~ .service-slider-controls .service-slider-controls-item--1::before {
   top: 0;
   height: 40px;
   width: 277px;
   background-color: #000000;
 }
 
-#service-2:checked ~ .service-slider-controls .service-slider-controls-item--2 {
+.service-s2:checked ~ .service-slider-controls .service-slider-controls-item--2 {
   color: #f7e184;
   transition: none;
 }
 
-#service-2:checked ~ .service-slider-controls .service-slider-controls-item--2::before {
+.service-s2:checked ~ .service-slider-controls .service-slider-controls-item--2::before {
   top: 0;
   height: 40px;
   width: 277px;
   background-color: #000000;
 }
 
-#service-3:checked ~ .service-slider-controls .service-slider-controls-item--3 {
+.service-s3:checked ~ .service-slider-controls .service-slider-controls-item--3 {
   color: #f7e184;
   transition: none;
 }
 
-#service-3:checked ~ .service-slider-controls .service-slider-controls-item--3::before {
+.service-s3:checked ~ .service-slider-controls .service-slider-controls-item--3::before {
   top: 0;
   height: 40px;
   width: 277px;
   background-color: #000000;
 }
 
-#service-1:checked ~ .service-slider-list .service-slider-item:nth-child(1) {
+.service-s1:checked ~ .service-slider-list .service-slider-item:nth-child(1) {
   display: flex;
 }
 
-#service-2:checked ~ .service-slider-list .service-slider-item:nth-child(2) {
+.service-s2:checked ~ .service-slider-list .service-slider-item:nth-child(2) {
   display: flex;
 }
 
-#service-3:checked ~ .service-slider-list .service-slider-item:nth-child(3) {
+.service-s3:checked ~ .service-slider-list .service-slider-item:nth-child(3) {
   display: flex;
 }
 
@@ -1324,10 +1324,8 @@ main.container {
 
 .catalog-main {
   width: 100%;
-  /*height: 1217px;*/
 
   background: linear-gradient(to right, #eeeeee 0%, #eeeeee 50%, #ffffff 50%, #ffffff 100%);
-  /*opacity: 0.5;*/
 }
 
 .catalog-wrapper {
